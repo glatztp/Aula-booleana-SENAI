@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Verificação de Elegibilidade</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Verificação de Elegibilidade para Votar</h1>
+        <form id="formIdade">
+            <label for="idade">Digite sua idade:</label>
+            <input type="number" id="idade" name="idade" required>
+            <button type="button" onclick="verificarElegibilidade()">Verificar</button>
+        </form>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+      function verificarElegibilidade() {
+    var idade = document.getElementById("idade").value;
+    var resultadoElemento = document.getElementById("resultado");
+
+    if (idade >= 18) {
+        resultadoElemento.textContent = "Você é elegível para votar!";
+        resultadoElemento.style.color = "#4caf50"; // verde
+    } else {
+        resultadoElemento.textContent = "Você não é elegível para votar.";
+        resultadoElemento.style.color = "#f44336"; // vermelho
+    }
+}
+
+    </script>
+
+</body>
+</html>
